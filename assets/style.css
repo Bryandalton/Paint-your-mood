@@ -1,0 +1,19 @@
+#color-div {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    grid-template-columns: 33% 33%;
+    justify-content: space-around;
+    height: 70vh;
+}
+
+.color-btn {
+    margin-top: 35px;
+    padding: 70px;
+}
+ h1 {
+    font-size: 5rem;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 25px;
+ }
