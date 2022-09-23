@@ -10,6 +10,9 @@
 .color-btn {
     margin-top: 35px;
     padding: 70px;
+    border-radius: 100%;
+    border: solid 10px cornflowerblue;
+    border-style: ridge;
 }
  h1 {
     font-size: 5rem;
