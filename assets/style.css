@@ -20,3 +20,21 @@
     text-decoration: underline;
     margin-top: 25px;
  }
+ .info {
+    margin-right: 20px;
+    padding: 20px;
+    float: left;
+    width: 20%;
+    height: 100vh;
+    background-color: #2589bd;
+ }
+ .art {
+    padding-top: 20px;
+ }
+
+ .nav-buttons {
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 20px;
+    left: 50%;
+ }
