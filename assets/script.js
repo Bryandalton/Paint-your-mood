@@ -44,3 +44,8 @@ colorDiv.addEventListener('click', btnHandler);
 
 }
 
+function backgroundChange(color) {
+
+   document.body.style.background = color;
+
+}
