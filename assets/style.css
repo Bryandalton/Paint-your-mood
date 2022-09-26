@@ -14,6 +14,43 @@
     /* border: solid 10px cornflowerblue; */
     /* border-style: ridge; */
 }
+
+#redHover:hover {
+
+   background-color: red;
+
+}
+
+#orangeHover:hover {
+
+   background-color: orange;
+
+}
+
+#yellowHover:hover {
+
+   background-color: yellow;
+
+}
+
+#greenHover:hover {
+
+   background-color:green;
+
+}
+
+#blueHover:hover {
+
+   background-color: blue;
+
+}
+
+#purpleHover:hover {
+
+   background-color: purple;
+
+}
+
  h1 {
     font-size: 5rem;
     text-align: center;
