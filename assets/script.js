@@ -9,14 +9,15 @@ var page = pageArray[pageArray.length - 1]
 var artEl = document.querySelector('.art')
 var nextBtn = document.querySelector('#next')
 var prevBtn = document.querySelector('#prev')
-var imgIndex = 0
+var artDataArray;
+var imgIndex = 0;
 
-console.log(imgIndex)
+
 console.log(page);
 
 //append title function works but throws error on index.html because it's not appending to that page
-function appendTitle (artData) {
-    artData.forEach((art) => {
+function appendTitle () {
+    artDataArray.forEach((art) => {
     var titleEl = document.createElement('h3')
     titleEl.innerText = art.title
     infoAside.appendChild(titleEl);
@@ -34,21 +35,38 @@ function btnHandler() {
     document.location = './display.html'
 };
 
-function imgHandler(imgData) {
-    var imgUrl = 'https://www.artic.edu/iiif/2/' + imgData[2].image_id + '/full/843,/0/default.jpg'
+function imgHandler() {
+    var imgId = artDataArray[imgIndex].image_id
     var imgEl = document.createElement('img')
-    imgEl.src = imgUrl
+
+    if (!imgId) {
+        imgEl.src = "https://png.pngtree.com/png-vector/20210604/ourmid/pngtree-gray-network-placeholder-png-image_3416659.jpg";
+    } else {
+        imgEl.src = 'https://www.artic.edu/iiif/2/' + imgId + '/full/843,/0/default.jpg'
+    }
+    artEl.innerHTML = "";
     artEl.appendChild(imgEl)
+    
 };
 
 function next () {
-    if (imgIndex < 13) {
+    if (imgIndex < 11) {
         imgIndex++
+        imgHandler()
+        appendTitle()
+
+        console.log(imgIndex)
+
     }
 };
 function prev () {
     if (imgIndex > 0) {
         imgIndex--
+        imgHandler()
+        appendTitle()
+
+        console.log(imgIndex)
+
     }
 };
 
@@ -59,16 +77,15 @@ if (page == 'index.html') {
     fetch(chicagoArtApi)
     .then (response => response.json())
     .then(({ data }) => {
-        appendTitle(data)
-        imgHandler(data)
+        artDataArray = data;
+        appendTitle()
+        imgHandler()
         console.log(data)
         console.log(data[0].image_id)
     });
 
     homeBtn.addEventListener('click', returnHome);
+    nextBtn.addEventListener('click', next)
+    prevBtn.addEventListener('click', prev)
 
 };
-
-if (page == 'display.html') {
-    nextBtn.addEventListener('click', next)
-}
