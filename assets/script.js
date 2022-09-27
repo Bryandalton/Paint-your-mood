@@ -6,10 +6,13 @@ var colorDiv = document.querySelector('#color-div')
 var pathName = window.location.pathname;
 var pageArray = pathName.split("/");
 var page = pageArray[pageArray.length - 1]
+var artEl = document.querySelector('.art')
+var nextBtn = document.querySelector('#next')
+var prevBtn = document.querySelector('#prev')
+var imgIndex = 0
+
+console.log(imgIndex)
 console.log(page);
-
-// calls data of artwork from the api but all it really does right now is append their titles to the display page
-
 
 //append title function works but throws error on index.html because it's not appending to that page
 function appendTitle (artData) {
@@ -24,23 +27,48 @@ function appendTitle (artData) {
 function returnHome () {
     page = 'index.html';
     document.location = './index.html'
-    console.log('this is return home function')
 };
 
 function btnHandler() { 
     page = 'diplay.html';
     document.location = './display.html'
-    console.log('this is btnHandler fucnction')
+};
+
+function imgHandler(imgData) {
+    var imgUrl = 'https://www.artic.edu/iiif/2/' + imgData[2].image_id + '/full/843,/0/default.jpg'
+    var imgEl = document.createElement('img')
+    imgEl.src = imgUrl
+    artEl.appendChild(imgEl)
+};
+
+function next () {
+    if (imgIndex < 13) {
+        imgIndex++
+    }
+};
+function prev () {
+    if (imgIndex > 0) {
+        imgIndex--
+    }
 };
 
 if (page == 'index.html') {
-colorDiv.addEventListener('click', btnHandler);
+    colorDiv.addEventListener('click', btnHandler);
 
 } else {
     fetch(chicagoArtApi)
-.then (response => response.json())
-.then(({ data }) => appendTitle(data));
+    .then (response => response.json())
+    .then(({ data }) => {
+        appendTitle(data)
+        imgHandler(data)
+        console.log(data)
+        console.log(data[0].image_id)
+    });
+
     homeBtn.addEventListener('click', returnHome);
 
-}
+};
 
+if (page == 'display.html') {
+    nextBtn.addEventListener('click', next)
+}
