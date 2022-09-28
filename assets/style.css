@@ -94,11 +94,13 @@
     width: 20%;
     height: 100vh;
     background-color: #2589bd;
- }
- .art {
-    padding-top: 20px;
+    text-align: center;
  }
 
+ .info p {
+   padding: 30px;
+ }
+ 
  .nav-buttons {
     position: fixed;
     bottom: 0;
@@ -116,5 +118,16 @@
    justify-content: center;
    align-items: center;
    flex-direction: column;
+   padding-top: 20px;
  }
 
+ .art img {
+   max-height: 90vh;
+   box-shadow: black 0 10px 20px;
+ }
+
+.container {
+   height: 100vh;
+   background-color: darkgray;
+   padding: 20px;
+}

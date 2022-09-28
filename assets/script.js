@@ -9,19 +9,20 @@ var page = pageArray[pageArray.length - 1]
 var artEl = document.querySelector('.art')
 var nextBtn = document.querySelector('#next')
 var prevBtn = document.querySelector('#prev')
+var artTypeEL = document.querySelector('#type')
+var artistEL = document.querySelector('#artist')
+var titleEL = document.querySelector('#title')
 var artDataArray;
 var imgIndex = 0;
 
 
 console.log(page);
 
-//append title function works but throws error on index.html because it's not appending to that page
+//to do: change appendTitle to display one title at a time and additional informationn about the artwork depicted.
 function appendTitle () {
-    artDataArray.forEach((art) => {
-    var titleEl = document.createElement('h3')
-    titleEl.innerText = art.title
-    infoAside.appendChild(titleEl);
-    });
+    titleEL.innerText = artDataArray[imgIndex].title
+    artistEL.innerText = artDataArray[imgIndex].artist_title
+    artTypeEL.innerText = artDataArray[imgIndex].artwork_type_title
 };
 
 
@@ -40,7 +41,7 @@ function imgHandler() {
     var imgEl = document.createElement('img')
 
     if (!imgId) {
-        imgEl.src = "https://png.pngtree.com/png-vector/20210604/ourmid/pngtree-gray-network-placeholder-png-image_3416659.jpg";
+        imgEl.src = 'assets/images/no-image-avalible.jpg';
     } else {
         imgEl.src = 'https://www.artic.edu/iiif/2/' + imgId + '/full/843,/0/default.jpg'
     }
