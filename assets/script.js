@@ -28,12 +28,12 @@ function appendTitle () {
 
 function returnHome () {
     page = 'index.html';
-    document.location.pathname = '/index.html'
+    document.location.pathname = '/https://bryandalton.github.io/Paint-your-mood/'
 };
 
 function btnHandler() { 
-    page = 'diplay.html';
-    document.location.pathname = '/display.html'
+    page = 'display.html';
+    document.location.pathname = 'https://bryandalton.github.io/Paint-your-mood//display.html'
 };
 
 function imgHandler() {
