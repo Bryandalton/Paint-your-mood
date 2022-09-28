@@ -28,12 +28,12 @@ function appendTitle () {
 
 function returnHome () {
     page = 'index.html';
-    document.location = '/Paint-your-mood/index.html'
+    document.location.pathname = '/index.html'
 };
 
 function btnHandler() { 
     page = 'diplay.html';
-    document.location = '/Paint-your-mood/display.html'
+    document.location.pathname = '/display.html'
 };
 
 function imgHandler() {
