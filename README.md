@@ -19,6 +19,7 @@ when i click a button i want to see art of the corresponding type
 // list of technology used and any links to further information related to this technology
 
 // Open-source projects that the developers independently modify or expand should be contained in a section on “desired collaboration” in the readme.md file. How should problems be handled? How should developers advance the changes?
+added image info, image styling, and a no image avalible image
 
 //Known bugs and any bug fixes
 
