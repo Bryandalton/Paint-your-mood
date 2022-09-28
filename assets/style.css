@@ -1,18 +1,20 @@
 #color-div {
-    display: grid;
+    display: flex;
     align-content: center;
     justify-content: center;
-    grid-template-columns: 33% 33%;
+    /* grid-template-columns: 33% 33%; */
     justify-content: space-around;
-    height: 70vh;
+    height: 90vh;
+    margin-top: 15%;
 }
 
 .color-btn {
     margin-top: 35px;
     padding: 30px;
-    /* border-radius: 100%; */
-    /* border: solid 10px cornflowerblue; */
-    /* border-style: ridge; */
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    align-items: center;
 }
 
 #redHover:hover {
