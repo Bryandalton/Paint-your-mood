@@ -87,8 +87,8 @@ if (page == 'index.html') {
     homeBtn.addEventListener('click', returnHome);
     nextBtn.addEventListener('click', next)
     prevBtn.addEventListener('click', prev)
+};
 
 function backgroundChange(color) {
    document.body.style.background = color;
-}
-
+};
