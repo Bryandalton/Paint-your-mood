@@ -16,7 +16,8 @@ var artDataArray;
 var imgIndex = 0;
 
 
-console.log(page);
+// console.log(page);
+
 
 //to do: change appendTitle to display one title at a time and additional informationn about the artwork depicted.
 function appendTitle () {
@@ -27,13 +28,17 @@ function appendTitle () {
 
 
 function returnHome () {
-    page = 'index.html';
-    document.location.pathname = '/https://bryandalton.github.io/Paint-your-mood/'
+    pageArray.pop();
+    // document.location.pathname = '/index.html'
+    document.location.href = document.location.origin + pageArray.join('/') + '/index.html';
+    console.log(document.location)
+
 };
 
 function btnHandler() { 
-    page = 'display.html';
-    document.location.pathname = 'https://bryandalton.github.io/Paint-your-mood/display.html'
+    pageArray.pop();
+
+    document.location.href = document.location.origin + pageArray.join('/') + '/display.html'
 };
 
 function imgHandler() {
