@@ -33,7 +33,7 @@ function returnHome () {
 
 function btnHandler() { 
     page = 'display.html';
-    document.location.pathname = 'https://bryandalton.github.io/Paint-your-mood//display.html'
+    document.location.pathname = 'https://bryandalton.github.io/Paint-your-mood/display.html'
 };
 
 function imgHandler() {
