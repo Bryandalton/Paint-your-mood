@@ -14,6 +14,10 @@ var artistEL = document.querySelector("#artist");
 var titleEL = document.querySelector("#title");
 var artDataArray;
 var imgIndex = 0;
+var instance = document.Carousel.init({
+  fullWidth: true,
+  indicators: true
+});
 
 function appendTitle() {
   titleEL.innerText = artDataArray[imgIndex].title;
@@ -89,3 +93,4 @@ if (page == "index.html") {
 function backgroundChange(color) {
   document.body.style.background = color;
 }
+
