@@ -2,9 +2,8 @@
     display: flex;
     align-content: center;
     justify-content: center;
-    /* grid-template-columns: 33% 33%; */
     justify-content: space-around;
-    height: 90vh;
+    height: 30vh;
     margin-top: 15%;
 }
 
@@ -112,14 +111,13 @@
 
  h1 {
     font-size: 5rem;
-    text-align: center;
     text-decoration: underline;
     margin-top: 25px;
+    text-shadow: 1px 1px 2px white;
  }
  .info {
     margin-right: 20px;
     padding: 20px;
-    float: left;
     width: 20%;
     height: 100vh;
     background-color: #2589bd;
@@ -159,4 +157,12 @@
    height: 100vh;
    background-color: darkgray;
    padding: 20px;
+}
+
+@media screen and (max-width: 950px) {
+   #color-div {
+      display: grid;
+      margin-top: 60%;
+   }
+   
 }

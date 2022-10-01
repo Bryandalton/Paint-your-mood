@@ -14,7 +14,7 @@ var artTypeEL = document.querySelector("#type");
 var artistEL = document.querySelector("#artist");
 var titleEL = document.querySelector("#title");
 var artDataArray =[];
-var records = [];
+var harvardApiRecords = [];
 var imgIndex = 0;
 
 function appendTitle() {
@@ -39,10 +39,10 @@ function btnHandler() {
 
 function imgHandler() {
   var imgId = artDataArray[imgIndex].image_id;
-  var harvardImgUrl = records[imgIndex].baseimageurl
+  var harvardImgUrl = harvardApiRecords[imgIndex].baseimageurl
   var imgEl = document.createElement("img");
-
-  if (!imgId || !harvardImgUrl) {
+console.log(harvardImgUrl)
+  if (!imgId && !harvardImgUrl) {
     imgEl.src = "assets/images/no-image-avalible.jpg";
   } else if (imgId) {
     imgEl.src =
@@ -60,7 +60,7 @@ function next() {
     console.log(imgIndex);
   } else if (imgIndex == artDataArray.length) {
     imgIndex = 0;
-    
+
   }
 }
 function prev() {
@@ -82,13 +82,14 @@ if (page == "index.html") {
       artDataArray = data;
       appendTitle();
       imgHandler();
-      console.log(data);
+      console.log(artDataArray);
     });
 
     fetch(harvardArtApi)
     .then(response => response.json())
     .then(data => {console.log(data);
-    records = data.records;
+    harvardApiRecords = data.records;
+    console.log(harvardApiRecords[0].baseimageurl)
     imgHandler()
     })
 
