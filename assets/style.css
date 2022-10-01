@@ -14,37 +14,10 @@
     width: 150px;
     border-radius: 100%;
     align-items: center;
-    font-size: 1.5rem;
-   text-shadow: 2px 2px 5px black;
-
-}
-
-#redHover {
-   color: red;
-}
-
-#orangeHover {
-   color: orange;
-}
-
-#yellowHover {
-   color: yellow;
-}
-
-#greenHover {
-   color: green;
-}
-
-#blueHover {
-   color: blue;
-}
-
-#purpleHover {
-   color: purple;
 }
 
 #redHover:hover {
-   color: white;
+
    background: linear-gradient(to right, 
     rgb(253, 211, 211) 0%, 
     rgb(255, 158, 158) 25%, 
@@ -55,7 +28,7 @@
 }
 
 #orangeHover:hover {
-   color: white;
+
    background: linear-gradient(to right, 
     rgb(255, 225, 197) 0%, 
     rgb(255, 199, 147) 25%, 
@@ -66,7 +39,7 @@
 }
 
 #yellowHover:hover {
-   color: black;
+
    background: linear-gradient(to right, 
     rgb(255, 254, 202) 0%, 
     rgb(255, 253, 137) 25%, 
@@ -77,7 +50,7 @@
 }
 
 #greenHover:hover {
-   color: white;
+
    background: linear-gradient(to right, 
     rgb(194, 255, 189) 0%, 
     rgb(147, 255, 137) 25%, 
@@ -88,7 +61,7 @@
 }
 
 #blueHover:hover {
-   color: white;
+
    background: linear-gradient(to right, 
     rgb(193, 194, 255) 0%, 
     rgb(143, 145, 255) 25%, 
@@ -99,7 +72,7 @@
 }
 
 #purpleHover:hover {
-   color: white;
+
    background: linear-gradient(to right, 
     rgb(233, 194, 255) 0%, 
     rgb(210, 132, 255) 25%, 
