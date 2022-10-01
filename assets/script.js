@@ -1,4 +1,5 @@
 var chicagoArtApi = "https://api.artic.edu/api/v1/artworks";
+var harvardArtApi = 'https://api.harvardartmuseums.org/image?sort=random&apikey=1421f73f-acb6-4564-a869-c9f72b2ad32c'
 var infoAside = document.querySelector(".info");
 var homeBtn = document.querySelector("#home");
 var colorBtns = document.querySelectorAll(".color-btn");
@@ -12,7 +13,8 @@ var prevBtn = document.querySelector("#prev");
 var artTypeEL = document.querySelector("#type");
 var artistEL = document.querySelector("#artist");
 var titleEL = document.querySelector("#title");
-var artDataArray;
+var artDataArray =[];
+var records = [];
 var imgIndex = 0;
 
 function appendTitle() {
@@ -37,25 +39,28 @@ function btnHandler() {
 
 function imgHandler() {
   var imgId = artDataArray[imgIndex].image_id;
+  var harvardImgUrl = records[imgIndex].baseimageurl
   var imgEl = document.createElement("img");
 
-  if (!imgId) {
+  if (!imgId || !harvardImgUrl) {
     imgEl.src = "assets/images/no-image-avalible.jpg";
-  } else {
+  } else if (imgId) {
     imgEl.src =
       "https://www.artic.edu/iiif/2/" + imgId + "/full/843,/0/default.jpg";
-  }
+  } else {imgEl.src = harvardImgUrl}
   artEl.innerHTML = "";
   artEl.appendChild(imgEl);
 }
 
 function next() {
-  if (imgIndex < 11) {
+  if (imgIndex < artDataArray.length) {
     imgIndex++;
     imgHandler();
     appendTitle();
-
     console.log(imgIndex);
+  } else if (imgIndex == artDataArray.length) {
+    imgIndex = 0;
+    
   }
 }
 function prev() {
@@ -78,8 +83,14 @@ if (page == "index.html") {
       appendTitle();
       imgHandler();
       console.log(data);
-      console.log(data[0].image_id);
     });
+
+    fetch(harvardArtApi)
+    .then(response => response.json())
+    .then(data => {console.log(data);
+    records = data.records;
+    imgHandler()
+    })
 
   homeBtn.addEventListener("click", returnHome);
   nextBtn.addEventListener("click", next);
