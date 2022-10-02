@@ -15,12 +15,20 @@ var artistEL = document.querySelector("#artist");
 var titleEL = document.querySelector("#title");
 var artDataArray =[];
 var harvardApiRecords = [];
-var imgIndex = 0;
+var chicagoImgIndex = 0;
+var harvardImgIndex = 0;
 
-function appendTitle() {
-  titleEL.innerText = artDataArray[imgIndex].title;
-  artistEL.innerText = artDataArray[imgIndex].artist_title;
-  artTypeEL.innerText = artDataArray[imgIndex].artwork_type_title;
+function chicagoArtInfo() {
+  titleEL.innerText = artDataArray[chicagoImgIndex].title;
+  artistEL.innerText = artDataArray[chicagoImgIndex].artist_title;
+  artTypeEL.innerText = artDataArray[chicagoImgIndex].artwork_type_title;
+}
+
+function harvardArtInfo() {
+  titleEL.innerText = harvardApiRecords[harvardImgIndex].caption;
+  artistEL.innerText = harvardApiRecords[harvardImgIndex].copyright;
+  artTypeEL.innerText = harvardApiRecords[harvardImgIndex].format;
+
 }
 
 function returnHome() {
@@ -38,10 +46,9 @@ function btnHandler() {
 }
 
 function imgHandler() {
-  var imgId = artDataArray[imgIndex].image_id;
-  var harvardImgUrl = harvardApiRecords[imgIndex].baseimageurl
+  var imgId = artDataArray[chicagoImgIndex]?.image_id;
+  var harvardImgUrl = harvardApiRecords[harvardImgIndex]?.baseimageurl
   var imgEl = document.createElement("img");
-console.log(harvardImgUrl)
   if (!imgId && !harvardImgUrl) {
     imgEl.src = "assets/images/no-image-avalible.jpg";
   } else if (imgId) {
@@ -53,23 +60,28 @@ console.log(harvardImgUrl)
 }
 
 function next() {
-  if (imgIndex < artDataArray.length) {
-    imgIndex++;
+  if (chicagoImgIndex < artDataArray.length) {
+    chicagoImgIndex++;
     imgHandler();
-    appendTitle();
-    console.log(imgIndex);
-  } else if (imgIndex == artDataArray.length) {
-    imgIndex = 0;
-
+    chicagoArtInfo();
+    console.log(chicagoImgIndex);
+  } else if (chicagoImgIndex == artDataArray.length && harvardImgIndex < harvardApiRecords.length) {
+    harvardImgIndex++;
+    imgHandler();
+    harvardArtInfo();
   }
 }
 function prev() {
-  if (imgIndex > 0) {
-    imgIndex--;
+  if (harvardImgIndex > 0) {
+    harvardImgIndex--;
     imgHandler();
-    appendTitle();
-
-    console.log(imgIndex);
+    harvardArtInfo();
+   console.log(harvardImgIndex);
+  } else if (chicagoImgIndex > 0) {
+    chicagoImgIndex--;
+    imgHandler();
+    chicagoArtInfo();
+    console.log(chicagoImgIndex);
   }
 }
 
@@ -80,7 +92,7 @@ if (page == "index.html") {
     .then((response) => response.json())
     .then(({ data }) => {
       artDataArray = data;
-      appendTitle();
+      chicagoArtInfo();
       imgHandler();
       console.log(artDataArray);
     });
@@ -89,9 +101,9 @@ if (page == "index.html") {
     .then(response => response.json())
     .then(data => {console.log(data);
     harvardApiRecords = data.records;
-    console.log(harvardApiRecords[0].baseimageurl)
-    imgHandler()
-    })
+    imgHandler();
+    harvardArtInfo();
+    });
 
   homeBtn.addEventListener("click", returnHome);
   nextBtn.addEventListener("click", next);
