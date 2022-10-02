@@ -1,168 +1,172 @@
 #color-div {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    justify-content: space-around;
-    height: 30vh;
-    margin-top: 15%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  justify-content: space-around;
+  height: 30vh;
+  margin-top: 15%;
 }
 
 .color-btn {
-    margin-top: 35px;
-    padding: 30px;
-    height: 150px;
-    width: 150px;
-    border-radius: 100%;
-    align-items: center;
-    font-size: 1.5rem;
-   text-shadow: 2px 2px 5px black;
-
+  margin-top: 35px;
+  padding: 30px;
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  align-items: center;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 5px black;
 }
 
 #redHover {
-   color: red;
+  color: red;
 }
 
 #orangeHover {
-   color: orange;
+  color: orange;
 }
 
 #yellowHover {
-   color: yellow;
+  color: yellow;
 }
 
 #greenHover {
-   color: green;
+  color: green;
 }
 
 #blueHover {
-   color: blue;
+  color: blue;
 }
 
 #purpleHover {
-   color: purple;
+  color: purple;
 }
 
 #redHover:hover {
-   color: white;
-   background: linear-gradient(to right, 
-    rgb(253, 211, 211) 0%, 
-    rgb(255, 158, 158) 25%, 
+  color: white;
+  background: linear-gradient(
+    to right,
+    rgb(253, 211, 211) 0%,
+    rgb(255, 158, 158) 25%,
     rgb(255, 102, 102) 50%,
-    rgb(255, 55, 55) 75%, 
-    rgb(255, 0, 0) 100%);
-
+    rgb(255, 55, 55) 75%,
+    rgb(255, 0, 0) 100%
+  );
 }
 
 #orangeHover:hover {
-   color: white;
-   background: linear-gradient(to right, 
-    rgb(255, 225, 197) 0%, 
-    rgb(255, 199, 147) 25%, 
+  color: white;
+  background: linear-gradient(
+    to right,
+    rgb(255, 225, 197) 0%,
+    rgb(255, 199, 147) 25%,
     rgb(255, 174, 99) 50%,
-    rgb(255, 141, 35) 75%, 
-    rgb(255, 124, 0) 100%);
-
+    rgb(255, 141, 35) 75%,
+    rgb(255, 124, 0) 100%
+  );
 }
 
 #yellowHover:hover {
-   color: black;
-   background: linear-gradient(to right, 
-    rgb(255, 254, 202) 0%, 
-    rgb(255, 253, 137) 25%, 
+  color: black;
+  background: linear-gradient(
+    to right,
+    rgb(255, 254, 202) 0%,
+    rgb(255, 253, 137) 25%,
     rgb(255, 252, 99) 50%,
-    rgb(255, 251, 42) 75%, 
-    rgb(255, 251, 0) 100%);
-
+    rgb(255, 251, 42) 75%,
+    rgb(255, 251, 0) 100%
+  );
 }
 
 #greenHover:hover {
-   color: white;
-   background: linear-gradient(to right, 
-    rgb(194, 255, 189) 0%, 
-    rgb(147, 255, 137) 25%, 
+  color: white;
+  background: linear-gradient(
+    to right,
+    rgb(194, 255, 189) 0%,
+    rgb(147, 255, 137) 25%,
     rgb(95, 255, 81) 50%,
-    rgb(56, 255, 37) 75%, 
-    rgb(21, 255, 0) 100%);
-
+    rgb(56, 255, 37) 75%,
+    rgb(21, 255, 0) 100%
+  );
 }
 
 #blueHover:hover {
-   color: white;
-   background: linear-gradient(to right, 
-    rgb(193, 194, 255) 0%, 
-    rgb(143, 145, 255) 25%, 
+  color: white;
+  background: linear-gradient(
+    to right,
+    rgb(193, 194, 255) 0%,
+    rgb(143, 145, 255) 25%,
     rgb(93, 96, 255) 50%,
-    rgb(37, 41, 255) 75%, 
-    rgb(0, 4, 255) 100%);
-
+    rgb(37, 41, 255) 75%,
+    rgb(0, 4, 255) 100%
+  );
 }
 
 #purpleHover:hover {
-   color: white;
-   background: linear-gradient(to right, 
-    rgb(233, 194, 255) 0%, 
-    rgb(210, 132, 255) 25%, 
+  color: white;
+  background: linear-gradient(
+    to right,
+    rgb(233, 194, 255) 0%,
+    rgb(210, 132, 255) 25%,
     rgb(194, 89, 255) 50%,
-    rgb(177, 42, 255) 75%, 
-    rgb(162, 0, 255) 100%);
-
+    rgb(177, 42, 255) 75%,
+    rgb(162, 0, 255) 100%
+  );
 }
 
- h1 {
-    font-size: 5rem;
-    text-decoration: underline;
-    margin-top: 25px;
-    text-shadow: 1px 1px 2px white;
- }
- .info {
-    margin-right: 20px;
-    padding: 20px;
-    width: 20%;
-    height: 100vh;
-    background-color: #2589bd;
-    text-align: center;
- }
+h1 {
+  font-size: 5rem;
+  text-decoration: underline;
+  margin-top: 25px;
+  text-shadow: 1px 1px 2px white;
+}
+.info {
+  margin-right: 20px;
+  padding: 20px;
+  width: 20%;
+  height: 100vh;
+  background-color: #2589bd;
+  text-align: center;
+}
 
- .info p {
-   padding: 30px;
- }
- 
- .nav-buttons {
-    position: fixed;
-    bottom: 0;
-    padding-bottom: 20px;
-    left: 50%;
- }
+.info p {
+  padding: 30px;
+}
 
- aside h3 {
-   font-size: 1.5rem;
-   font-weight: bold;
- }
- 
- .art {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   padding-top: 20px;
- }
+.nav-buttons {
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 20px;
+  left: 50%;
+}
 
- .art img {
-   max-height: 90vh;
-   box-shadow: black 0 10px 20px;
- }
+aside h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.art {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.art img {
+  max-height: 90vh;
+  box-shadow: black 0 10px 20px;
+}
 
 .container {
-   height: 100vh;
-   background-color: darkgray;
-   padding: 20px;
+  height: 100vh;
+  background-color: darkgray;
+  padding: 20px;
 }
 
 @media screen and (max-width: 950px) {
-   #color-div {
-      display: grid;
-      margin-top: 60%;
-   }
-   
+  #color-div {
+    display: grid;
+    margin-top: 60%;
+  }
 }

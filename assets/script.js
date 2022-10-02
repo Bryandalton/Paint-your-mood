@@ -1,5 +1,6 @@
 var chicagoArtApi = "https://api.artic.edu/api/v1/artworks";
-var harvardArtApi = 'https://api.harvardartmuseums.org/image?sort=random&apikey=1421f73f-acb6-4564-a869-c9f72b2ad32c'
+var harvardArtApi =
+  "https://api.harvardartmuseums.org/image?sort=random&apikey=1421f73f-acb6-4564-a869-c9f72b2ad32c";
 var infoAside = document.querySelector(".info");
 var homeBtn = document.querySelector("#home");
 var colorBtns = document.querySelectorAll(".color-btn");
@@ -13,11 +14,14 @@ var prevBtn = document.querySelector("#prev");
 var artTypeEL = document.querySelector("#type");
 var artistEL = document.querySelector("#artist");
 var titleEL = document.querySelector("#title");
-var artDataArray =[];
+var artDataArray = [];
 var harvardApiRecords = [];
 var chicagoImgIndex = 0;
 var harvardImgIndex = 0;
 
+function backgroundChange(color) {
+  document.body.style.background = color;
+}
 function chicagoArtInfo() {
   titleEL.innerText = artDataArray[chicagoImgIndex].title;
   artistEL.innerText = artDataArray[chicagoImgIndex].artist_title;
@@ -28,7 +32,6 @@ function harvardArtInfo() {
   titleEL.innerText = harvardApiRecords[harvardImgIndex].caption;
   artistEL.innerText = harvardApiRecords[harvardImgIndex].copyright;
   artTypeEL.innerText = harvardApiRecords[harvardImgIndex].format;
-
 }
 
 function returnHome() {
@@ -47,14 +50,16 @@ function btnHandler() {
 
 function imgHandler() {
   var imgId = artDataArray[chicagoImgIndex]?.image_id;
-  var harvardImgUrl = harvardApiRecords[harvardImgIndex]?.baseimageurl
+  var harvardImgUrl = harvardApiRecords[harvardImgIndex]?.baseimageurl;
   var imgEl = document.createElement("img");
   if (!imgId && !harvardImgUrl) {
     imgEl.src = "assets/images/no-image-avalible.jpg";
   } else if (imgId) {
     imgEl.src =
       "https://www.artic.edu/iiif/2/" + imgId + "/full/843,/0/default.jpg";
-  } else {imgEl.src = harvardImgUrl}
+  } else {
+    imgEl.src = harvardImgUrl;
+  }
   artEl.innerHTML = "";
   artEl.appendChild(imgEl);
 }
@@ -65,7 +70,10 @@ function next() {
     imgHandler();
     chicagoArtInfo();
     console.log(chicagoImgIndex);
-  } else if (chicagoImgIndex == artDataArray.length && harvardImgIndex < harvardApiRecords.length) {
+  } else if (
+    chicagoImgIndex == artDataArray.length &&
+    harvardImgIndex < harvardApiRecords.length
+  ) {
     harvardImgIndex++;
     imgHandler();
     harvardArtInfo();
@@ -76,7 +84,7 @@ function prev() {
     harvardImgIndex--;
     imgHandler();
     harvardArtInfo();
-   console.log(harvardImgIndex);
+    console.log(harvardImgIndex);
   } else if (chicagoImgIndex > 0) {
     chicagoImgIndex--;
     imgHandler();
@@ -97,19 +105,14 @@ if (page == "index.html") {
       console.log(artDataArray);
     });
 
-    fetch(harvardArtApi)
-    .then(response => response.json())
-    .then(data => {console.log(data);
-    harvardApiRecords = data.records;
-    imgHandler();
-    harvardArtInfo();
+  fetch(harvardArtApi)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      harvardApiRecords = data.records;
     });
 
   homeBtn.addEventListener("click", returnHome);
   nextBtn.addEventListener("click", next);
   prevBtn.addEventListener("click", prev);
-}
-
-function backgroundChange(color) {
-  document.body.style.background = color;
 }
