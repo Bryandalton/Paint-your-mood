@@ -18,6 +18,8 @@ var artDataArray = [];
 var harvardApiRecords = [];
 var chicagoImgIndex = 0;
 var harvardImgIndex = 0;
+var lastPick = document.querySelector('#lastPick')
+console.log(lastPick)
 
 function backgroundChange(color) {
   document.body.style.background = color;
@@ -46,7 +48,14 @@ function btnHandler() {
     "index.html",
     "display.html"
   );
+for (let i = 0; i < colorBtns.length; i++) {
+  colorBtns.forEach(console.log(colorBtns[i].innerText))
 }
+localStorage.setItem('last', colorBtns[i].innerText)
+lastPick.textContent = localStorage.getItem('lastPick');
+};
+  
+
 
 function imgHandler() {
   var imgId = artDataArray[chicagoImgIndex]?.image_id;
