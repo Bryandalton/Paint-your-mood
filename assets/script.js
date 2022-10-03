@@ -43,16 +43,15 @@ function returnHome() {
   );
 }
 
-function btnHandler() {
+function btnHandler(event) {
+  localStorage.setItem('lastPick', event.target.innerText)
+  console.log(localStorage.getItem('lastPick'))
+  lastPick.innerText = localStorage.getItem('lastpick')
+
   document.location.href = document.location.href.replace(
     "index.html",
     "display.html"
   );
-for (let i = 0; i < colorBtns.length; i++) {
-  colorBtns.forEach(console.log(colorBtns[i].innerText))
-}
-localStorage.setItem('last', colorBtns[i].innerText)
-lastPick.textContent = localStorage.getItem('lastPick');
 };
   
 
@@ -103,7 +102,8 @@ function prev() {
 }
 
 if (page == "index.html") {
-  colorDiv.addEventListener("click", btnHandler);
+  for(let i = 0; i < colorBtns.length; i++)
+  colorBtns[i].addEventListener("click", btnHandler);
 } else {
   fetch(chicagoArtApi)
     .then((response) => response.json())
