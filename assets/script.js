@@ -18,8 +18,8 @@ var artDataArray = [];
 var harvardApiRecords = [];
 var chicagoImgIndex = 0;
 var harvardImgIndex = 0;
-var lastPick = document.querySelector('#lastPick')
-console.log(lastPick)
+var lastPick = document.querySelector("#lastPick");
+console.log(lastPick);
 
 function backgroundChange(color) {
   document.body.style.background = color;
@@ -36,25 +36,10 @@ function harvardArtInfo() {
   artTypeEL.innerText = harvardApiRecords[harvardImgIndex].format;
 }
 
-function returnHome() {
-  document.location.href = document.location.href.replace(
-    "display.html",
-    "index.html"
-  );
-}
-
 function btnHandler(event) {
-  localStorage.setItem('lastPick', event.target.innerText)
-  console.log(localStorage.getItem('lastPick'))
-  lastPick.innerText = localStorage.getItem('lastpick')
-
-  document.location.href = document.location.href.replace(
-    "index.html",
-    "display.html"
-  );
-};
-  
-
+  localStorage.setItem("lastPick", event.target.innerText);
+  console.log(localStorage.getItem("lastPick"));
+}
 
 function imgHandler() {
   var imgId = artDataArray[chicagoImgIndex]?.image_id;
@@ -102,8 +87,9 @@ function prev() {
 }
 
 if (page == "index.html") {
-  for(let i = 0; i < colorBtns.length; i++)
-  colorBtns[i].addEventListener("click", btnHandler);
+  for (let i = 0; i < colorBtns.length; i++)
+    colorBtns[i].addEventListener("click", btnHandler);
+  lastPick.innerText = localStorage.getItem("lastPick");
 } else {
   fetch(chicagoArtApi)
     .then((response) => response.json())
@@ -120,8 +106,6 @@ if (page == "index.html") {
       console.log(data);
       harvardApiRecords = data.records;
     });
-
-  homeBtn.addEventListener("click", returnHome);
   nextBtn.addEventListener("click", next);
   prevBtn.addEventListener("click", prev);
 }
