@@ -48,12 +48,10 @@
     to right,
     rgb(253, 211, 211) 0%,
     rgb(255, 158, 158) 25%,
-    margin-top: 35px;
-    padding: 30px;
-    height: 150px;
-    width: 150px;
-    border-radius: 100%;
-    align-items: center;
+    rgb(255, 102, 102) 50%,
+    rgb(255, 55, 55) 75%,
+    rgb(255, 0, 0) 100%
+  );
 }
 
 #orangeHover:hover {
