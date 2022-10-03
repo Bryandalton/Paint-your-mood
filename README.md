@@ -1,25 +1,29 @@
 # Paint-your-mood
 
-// general description
-open page
-    see description of service
-    see buttons in multiple colors
-    see the last color choice i made
-    
-  // requirementes on the development  
-when i click a button i want to see art of the corresponding type
-    be taken to a page with art displayed
-    see information about art
-    cycle between pictures 
-    ability to return to home page
- Paint-your-mood
+## Description of Group Project
 
-// guide to installation and use
+Aside from progressing in the coding bootcamp, we were motivated to create this app as a fun and creative way to learn how to work with APIs as well as implement the skills we have learned during the first phase of this course. In addition, we learned how to work as a group and push, review, and merge branches of code to the main repo of our project.
 
-// list of technology used and any links to further information related to this technology
+## Installation
 
-// Open-source projects that the developers independently modify or expand should be contained in a section on “desired collaboration” in the readme.md file. How should problems be handled? How should developers advance the changes?
+At this time, no installation is needed.
 
-//Known bugs and any bug fixes
+Below are two screenshots of the "Paint Your Mood" app.
+![alt text](assets/images/Paint%20Your%20Mood.png)
+![alt text](assets/images/Artwork%20Page.png)
 
-//Copyright and licensing information
+## Usage
+
+The app itself is simple to use.  Choose a button whose color synchonizes with your current mood. Click on it, and you will be taken to another page with artwork. You can cycle through artwork using the "previous" and "next" buttons, and if you return to the main page to choose another color, the previous color you chose will be displayed under the title of the app.
+
+## Credits
+
+Much of the credit we extend to Bryan Dalton since he was willing to go above and beyong to get the JS functioning properly, which included speaking with our instructor, TA, and using other resources. We must also credit our APIs, which are from the Art Institute of Chicago as well as The Harvard Art Museum.
+
+## Creators
+
+Bryan Dalton, Brayden Burleigh, Ana Palma, and Matthew Swineford
+
+## License
+
+MIT License.  Refer to repo.
